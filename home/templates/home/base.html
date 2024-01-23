@@ -19,7 +19,7 @@
     <header>
         <nav class="navbar navbar-expand-lg bg-dark" data-bs-theme="dark">
             <div class="container">
-                <a class="navbar-brand" href="">Home</a>
+                <a class="navbar-brand" href="{% url 'home:index' %}">Home</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="Toggle navigation">
@@ -35,7 +35,7 @@
                             <ul class="dropdown-menu">
                                 <li><a class="dropdown-item  text-white" href="#">Доставка и оплата</a></li>
                                 <li><a class="dropdown-item  text-white" href="#">Контактная информация</a></li>
-                                <li><a class="dropdown-item  text-white" href="}">Про нас</a></li>
+                                <li><a class="dropdown-item  text-white" href="#"}">Про нас</a></li>
                             </ul>
                         </li>
                         <li class="nav-item">
@@ -78,13 +78,13 @@
                     <button class="btn btn-secondary dropdown-toggle btn-dark" type="button" data-bs-toggle="dropdown"
                         aria-expanded="false">
                         Каталог
-                        <img class="mx-1" src="" alt="Catalog Icon" width="16"
+                        <img class="mx-1" src="{% static 'deps/icons/grid-fill.svg' %}" alt="Catalog Icon" width="16"
                             height="16">
                     </button>
                     <ul class="dropdown-menu bg-dark" data-bs-theme="dark">
-                        <!-- {% for category in categories %}
-                            <li><a class="dropdown-item text-white" href="}">{{ category.name }}</a></li>
-                        {% endfor %} -->
+                        {% for category in categories %}
+                            <li><a class="dropdown-item text-white" href="{% url 'catalog:index' %}">{{ category.name }}</a></li>
+                        {% endfor %}
 
                     </ul>
                 </div>
@@ -92,7 +92,7 @@
                 <div>
                     <button type="button" class="btn btn-dark btn-secondary d-flex" id="modalButton"
                         aria-expanded="false">
-                        <img class="mx-1" src=" alt="Catalog Icon" width="24"
+                        <img class="mx-1" src="{% static 'deps/icons/basket2-fill.svg' %}" alt="Catalog Icon" width="24"
                             height="24">
                         <span id="goods-in-cart-count">0</span>
                     </button>
@@ -137,7 +137,7 @@
                                                     <div class="col p-0"><strong>100.00 $</strong></div>
                                                     <div class="col p-0">
                                                         <a href="#" class="remove-from-cart" data-cart-id="">
-                                                            <img class="mx-1" src=""
+                                                            <img class="mx-1" src="{% static 'deps/icons/trash3-fill.svg' %}"
                                                                 alt="Catalog Icon" width="16" height="16">
                                                         </a>
                                                     </div>
@@ -176,10 +176,10 @@
         </div>
     </section>
    {% block footer %}{% endblock footer %}
-    <!-- <script src="{% static 'deps/js/jquery/jquery-3.7.0.min.js' %}"></script>
+    <script src="{% static 'deps/js/jquery/jquery-3.7.0.min.js' %}"></script>
     <script src="{% static 'deps/js/jquery-events.js' %}"></script>
     <script src="{% static 'deps/js/jquery-ajax.js' %}"></script>
-    <script src="{% static 'deps/js/bootstrap/bootstrap.bundle.min.js' %}"></script> -->
+    <script src="{% static 'deps/js/bootstrap/bootstrap.bundle.min.js' %}"></script>
 </body>
 
 </html>
